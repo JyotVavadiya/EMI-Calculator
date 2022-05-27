@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -81,19 +82,20 @@ class _JyotState extends State<Jyot> {
               ),
               const SizedBox(height: 35),
               Container(
-                height: MediaQuery.of(context).size.height * 0.715,
+                height: MediaQuery.of(context).size.height * 0.766,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const SizedBox(height: 35),
+
                     myWidget("Loan Amount", loanamountsliderval, 1, 100000, 0),
-                    myWidget("Interest Rate", interestRatesliderval, 1, 100, 1),
+                    myWidget("Interest Rate", interestRatesliderval, 1, 10, 1),
                     myWidget("Loan Tenure", loanTenuresliderval, 1, 12, 2),
-                    const SizedBox(height: 40),
+
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 15),
+                            horizontal: 30, vertical: 10),
                         primary: Colors.deepPurpleAccent,
                         backgroundColor: const Color(0xffe7eaff),
                         side: const BorderSide(
@@ -103,7 +105,7 @@ class _JyotState extends State<Jyot> {
                       child: const Text(
                         "Calculate",
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 25,
                           color: Color(0xff2c3568),
                         ),
                       ),
@@ -120,7 +122,8 @@ class _JyotState extends State<Jyot> {
                         });
                         print("$EMI");
                       },
-                    )
+                    ),
+                    SizedBox(height: 10,),
                   ],
                 ),
                 decoration: const BoxDecoration(
